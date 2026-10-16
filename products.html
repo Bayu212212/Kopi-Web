@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aroma Bumi</title>
+    <title>Menu & Pemesanan | Aroma Bumi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="res/css/style.css">
 </head>
 <body>
@@ -23,31 +24,52 @@
     </header>   
     <h2 class="sub center">Our Coffee Based Products</h2>
     <p class="sub">Locally sourced best ingredients = best coffee</p>
-    <div class="products-list">
-        <div>
-            <p>Aren Latte<br>Rp 18.000,-</p>
-            <img src="res/img/aren latte.png">
+    <div class="order-page container">
+        <div class="order-menu">
+            <div class="order-filters">
+                <label class="visually-hidden" for="menu-search">Cari menu</label>
+                <input class="form-control" id="menu-search" type="search" placeholder="Cari menu...">
+                <label class="visually-hidden" for="menu-category">Filter kategori</label>
+                <select class="form-select" id="menu-category">
+                    <option value="all">Semua kategori</option>
+                    <option value="Latte">Latte</option>
+                    <option value="Espresso">Espresso</option>
+                </select>
+            </div>
+            <div class="order-menu-grid" id="menu-list" aria-live="polite"></div>
         </div>
-        <div>
-            <p>Cafe Latte<br>Rp 24.000,-</p>
-            <img src="res/img/cafe latte.png">
-        </div>
-        <div>
-            <p>Caramel Latte<br>Rp 30.000,-</p>
-            <img src="res/img/caramel latte.png">
-        </div>
-        <div>
-            <p>Americano<br>Rp 18.000,-</p>
-            <img src="res/img/americano.png">
-        </div>
-        <div>
-            <p>Cappucino<br>Rp 24.000,-</p>
-            <img src="res/img/cappucino.png">
-        </div>
-        <div>
-            <p>Butterscotch<br>Rp 24.000,-</p>
-            <img src="res/img/butterscotch.png">
-        </div>
+
+        <aside class="order-cart" aria-labelledby="cart-title">
+            <h2 id="cart-title">Keranjang</h2>
+            <div class="cart-items" id="cart-items" aria-live="polite"></div>
+            <p class="cart-empty" id="cart-empty">Keranjang masih kosong.</p>
+            <p class="cart-status" id="cart-status" role="status" aria-live="polite"></p>
+            <div class="cart-total">
+                <span>Total</span>
+                <strong id="cart-total">Rp0</strong>
+            </div>
+            <form id="order-form" novalidate>
+                <h3>Detail pemesanan</h3>
+                <div class="mb-3">
+                    <label class="form-label" for="customer-name">Nama</label>
+                    <input class="form-control" id="customer-name" name="name" type="text" autocomplete="name" required>
+                    <div class="invalid-feedback">Masukkan nama minimal 2 karakter.</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="customer-phone">Nomor kontak</label>
+                    <input class="form-control" id="customer-phone" name="phone" type="tel" autocomplete="tel" placeholder="Contoh: 081234567890" required>
+                    <div class="invalid-feedback">Masukkan nomor kontak dengan 9–15 angka.</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="customer-note">Catatan <span>(opsional)</span></label>
+                    <textarea class="form-control" id="customer-note" name="note" rows="3" maxlength="300" placeholder="Catatan untuk pesanan"></textarea>
+                    <div class="invalid-feedback">Catatan maksimal 300 karakter.</div>
+                    <div class="form-text">Maksimal 300 karakter.</div>
+                </div>
+                <button class="btn btn-primary w-100" type="submit">Periksa pesanan</button>
+                <p class="order-feedback" id="order-feedback" role="status" aria-live="polite"></p>
+            </form>
+        </aside>
     </div>
 
     <footer>
@@ -73,5 +95,7 @@
             <span>Customer Service</span>
         </div>
     </footer>
+    <script src="res/js/order.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
