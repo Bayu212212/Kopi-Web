@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,16 +14,17 @@
 <body>
     <header class="sub">
         <a href="index.html">
-            <img src="res/img/Logo White.png" alt="Main Logo">
+            <img src="res/img/Logo White.png" alt="Aroma Bumi">
         </a>
         <div>
-            <a href="products.html">Products</a>
-            <a href="store.html">Store</a>
-            <a href="contact.html">Contact</a>
+            <a href="products.html" aria-current="page">Menu</a>
+            <a href="store.html">Lokasi</a>
+            <a href="contact.html">Kontak</a>
         </div>
     </header>   
-    <h2 class="sub center">Our Coffee Based Products</h2>
-    <p class="sub">Locally sourced best ingredients = best coffee</p>
+    <h1 class="sub center">Menu Kopi, Non-kopi &amp; Teh</h1>
+    <p class="sub">Pilih minuman favoritmu, sesuaikan ukuran dan topping.</p>
+    <p class="order-demo-notice container" role="note">Mode demo: pesanan belum dikirim ke toko dan belum memiliki nomor antrean atau struk. Keduanya baru tersedia setelah sistem toko terhubung.</p>
     <div class="order-page container">
         <div class="order-menu">
             <div class="order-filters">
@@ -34,6 +35,8 @@
                     <option value="all">Semua kategori</option>
                     <option value="Latte">Latte</option>
                     <option value="Espresso">Espresso</option>
+                    <option value="Non Coffee">Non Coffee</option>
+                    <option value="Tea Based">Tea Based</option>
                 </select>
             </div>
             <div class="order-menu-grid" id="menu-list" aria-live="polite"></div>
@@ -74,25 +77,23 @@
 
     <footer>
         <div>
-            <img src="res/img/Logo White.png" class="logo">
-            <div>
-                <img src="res/img/MAIL ICON.svg" class="icon">
-                <img src="res/img/PHONE ICON.svg" class="icon">
-            </div>
+            <a href="index.html" aria-label="Aroma Bumi - Beranda">
+                <img src="res/img/Logo White.png" class="logo" alt="Aroma Bumi">
+            </a>
         </div>
         <div>
-            <span class="head">Products</span>
-            <span>Coffee Based</span>
-            <span>Non-Coffee</span>
-            <span>Tea Based</span>
+            <span class="head">Menu</span>
+            <a href="products.html">Kopi</a>
+            <a href="products.html">Non-kopi</a>
+            <a href="products.html">Teh</a>
         </div>
         <div>
-            <span class="head">Store</span>
-            <span>Location</span>
+            <span class="head">Kedai</span>
+            <a href="store.html">Lokasi</a>
         </div>
         <div>
-            <span class="head">Contact</span>
-            <span>Customer Service</span>
+            <span class="head">Bantuan</span>
+            <a href="contact.html">Kontak</a>
         </div>
     </footer>
     <script src="res/js/order.js"></script>

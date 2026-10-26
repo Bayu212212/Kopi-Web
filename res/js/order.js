@@ -4,7 +4,13 @@ const menuItems = [
     { id: 'caramel-latte', name: 'Caramel Latte', category: 'Latte', price: 30000, image: 'res/img/caramel latte.png' },
     { id: 'americano', name: 'Americano', category: 'Espresso', price: 18000, image: 'res/img/americano.png' },
     { id: 'cappuccino', name: 'Cappuccino', category: 'Espresso', price: 24000, image: 'res/img/cappucino.png' },
-    { id: 'butterscotch', name: 'Butterscotch', category: 'Latte', price: 24000, image: 'res/img/butterscotch.png' }
+    { id: 'butterscotch', name: 'Butterscotch', category: 'Latte', price: 24000, image: 'res/img/butterscotch.png' },
+    { id: 'chocolate', name: 'Chocolate', category: 'Non Coffee', price: 20000 },
+    { id: 'matcha-latte', name: 'Matcha Latte', category: 'Non Coffee', price: 25000 },
+    { id: 'red-velvet', name: 'Red Velvet', category: 'Non Coffee', price: 23000 },
+    { id: 'lemon-tea', name: 'Lemon Tea', category: 'Tea Based', price: 15000 },
+    { id: 'lychee-tea', name: 'Lychee Tea', category: 'Tea Based', price: 18000 },
+    { id: 'peach-tea', name: 'Peach Tea', category: 'Tea Based', price: 18000 }
 ];
 
 const cupSizes = [
@@ -72,7 +78,7 @@ function renderMenu() {
     menuList.innerHTML = visibleItems.map((item) => `
         <article class="menu-card" data-product-id="${item.id}">
             <div class="menu-card-image">
-                <img src="${item.image}" alt="${item.name}" loading="lazy">
+                ${item.image ? `<img src="${item.image}" alt="${item.name}" loading="lazy">` : `<span class="menu-image-placeholder">${item.category}</span>`}
             </div>
             <div class="menu-card-body">
                 <div class="menu-card-heading">

@@ -6,6 +6,7 @@ body {
     box-sizing: border-box;
 }
 
+h1.sub,
 h2.sub {
     margin: 0 0 40px;
     color: #0F8B8D;
@@ -13,6 +14,7 @@ h2.sub {
     line-height: 57.6px;
 }
 
+h1.center,
 h2.center {
     text-align: center;
 }
@@ -58,7 +60,7 @@ header a:not(:last-child) {
     margin-right: 50px;
 }
 
-main {
+.home-hero {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,13 +73,13 @@ main {
     border-radius: 0 0 30px 30px;
 }
 
-main h1 {
+.home-hero h1 {
     width: 500px;
     margin: 0;
     font-size: 70px;
     line-height: 84px;
 }
-main h2 {
+.home-hero h2 {
     width: 500px;
     margin: 0;
     font-size: 36px;
@@ -170,6 +172,19 @@ a.button {
     border-radius: 1000px;
 }
 
+.home-hero a.button {
+    margin-top: 28px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #EC9A29;
+    outline-offset: 3px;
+}
+
 section .gallery {
     display: flex;
     justify-content: space-between;
@@ -226,6 +241,7 @@ section .gallery img {
     align-items: flex-start;
 }
 
+.product-section h1,
 .product-section h2 {
     font-size: 48px;
     line-height: 58px;
@@ -288,6 +304,7 @@ section .gallery img {
     width: 50%;
 }
 
+.store-location h1,
 .store-location h2 {
     font-size: 48px;
     line-height: 58px;
@@ -365,8 +382,65 @@ footer span {
     line-height: 28.8px;
 }
 
+footer a {
+    color: #fff;
+    font-size: 24px;
+    line-height: 28.8px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
 footer span.head {
     color: #EC9A29;
+}
+
+.contact-page {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 900px;
+    min-height: 360px;
+    margin: 0 auto;
+    padding: 0 32px;
+    text-align: center;
+}
+
+.contact-page .button {
+    margin-bottom: 48px;
+}
+
+.contact-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+}
+
+.contact-card {
+    padding: 24px;
+    border: 1px solid #D2D2D2;
+    border-radius: 16px;
+    text-align: left;
+}
+
+.contact-card h2 {
+    color: #0F8B8D;
+    font-size: 24px;
+}
+
+.contact-card p {
+    color: #143642;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.contact-card a,
+.store-location .card a {
+    color: #0F686A;
+    font-weight: 700;
 }
 
 * {
@@ -392,23 +466,23 @@ img {
         margin-right: 24px;
     }
 
-    main {
+    .home-hero {
         min-height: 620px;
         height: auto;
         padding: 160px 32px 48px;
     }
 
-    main h1,
-    main h2 {
+    .home-hero h1,
+    .home-hero h2 {
         width: min(100%, 620px);
     }
 
-    main h1 {
+    .home-hero h1 {
         font-size: clamp(48px, 7vw, 64px);
         line-height: 1.15;
     }
 
-    main h2 {
+    .home-hero h2 {
         font-size: clamp(26px, 4vw, 32px);
         line-height: 1.25;
     }
@@ -485,17 +559,17 @@ img {
         margin-bottom: 56px;
     }
 
-    main {
+    .home-hero {
         min-height: 580px;
         padding: 190px 24px 56px;
         border-radius: 0 0 24px 24px;
     }
 
-    main h1 {
+    .home-hero h1 {
         font-size: clamp(42px, 9vw, 60px);
     }
 
-    main h2 {
+    .home-hero h2 {
         font-size: clamp(22px, 5vw, 30px);
     }
 
@@ -553,6 +627,7 @@ img {
         font-size: 20px;
     }
 
+    h1.sub,
     h2.sub {
         padding: 0 24px;
         font-size: clamp(34px, 7vw, 44px);
@@ -597,7 +672,9 @@ img {
         max-height: 380px;
     }
 
+    .product-section h1,
     .product-section h2,
+    .store-location h1,
     .store-location h2 {
         font-size: clamp(36px, 7vw, 44px);
         line-height: 1.2;
@@ -657,6 +734,15 @@ img {
         font-size: 20px;
         line-height: 1.4;
     }
+
+    footer a {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .contact-options {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }
 
 @media (max-width: 480px) {
@@ -670,7 +756,7 @@ img {
         font-size: 19px;
     }
 
-    main {
+    .home-hero {
         min-height: 540px;
         padding: 175px 20px 44px;
     }
@@ -722,6 +808,14 @@ img {
     margin-bottom: 80px;
 }
 
+.order-demo-notice {
+    margin: -20px auto 32px;
+    padding: 14px 20px;
+    border-left: 4px solid #EC9A29;
+    background: #fff8ed;
+    color: #143642;
+}
+
 .order-menu {
     min-width: 0;
 }
@@ -762,6 +856,12 @@ img {
     max-width: 80%;
     height: 140px;
     object-fit: contain;
+}
+
+.menu-image-placeholder {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
 }
 
 .menu-card-body {
